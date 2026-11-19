@@ -1,0 +1,78 @@
+{
+  "n_customers": 1200,
+  "features_used": [
+    "recency_days",
+    "frequency",
+    "log1p(monetary)"
+  ],
+  "scaler": "StandardScaler",
+  "weightage_weights": {
+    "recency": 0.3,
+    "frequency": 0.35,
+    "monetary": 0.35
+  },
+  "weightage_formula": "0.30*R_score + 0.35*F_score + 0.35*M_score (each 0-100 percentile, recency inverted)",
+  "k_range": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "elbow_inertia": {
+    "2": 1974.669337027136,
+    "3": 1418.8512673537728,
+    "4": 1128.891539388234,
+    "5": 913.3044402165133,
+    "6": 796.0050935783916,
+    "7": 708.6543778478742,
+    "8": 627.2014450780277
+  },
+  "silhouette_by_k": {
+    "2": 0.3968,
+    "3": 0.3442,
+    "4": 0.3494,
+    "5": 0.328,
+    "6": 0.309,
+    "7": 0.3116,
+    "8": 0.3237
+  },
+  "best_k": 2,
+  "best_k_chosen_by": "highest silhouette score",
+  "final_silhouette": 0.3968,
+  "final_inertia": 1974.67,
+  "comparison_agglomerative_k": 2,
+  "comparison_agglomerative_silhouette": 0.392,
+  "cluster_sizes": {
+    "0": 679,
+    "1": 521
+  },
+  "cluster_profiles": [
+    {
+      "cluster": 0,
+      "size": 679,
+      "share_pct": 56.58,
+      "mean_recency_days": 32.48,
+      "mean_frequency": 17.71,
+      "mean_monetary": 915.74,
+      "mean_weightage_score": 67.99,
+      "mean_age": 37.89,
+      "mean_tenure_months": 24.58,
+      "top_category": "Grocery"
+    },
+    {
+      "cluster": 1,
+      "size": 521,
+      "share_pct": 43.42,
+      "mean_recency_days": 142.8,
+      "mean_frequency": 5.01,
+      "mean_monetary": 231.53,
+      "mean_weightage_score": 26.6,
+      "mean_age": 38.2,
+      "mean_tenure_months": 23.5,
+      "top_category": "Grocery"
+    }
+  ]
+}
